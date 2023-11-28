@@ -39,4 +39,4 @@ class Test
 
 // Використання
 $testObject = new Test();
-echo $testObject->getSum(); // Результат буде 6
+echo $testObject->getSum();  // Результат буде 6
