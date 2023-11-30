@@ -1,15 +1,51 @@
 <?php
 class ProductData {
-    public function get($name) {}
-    public function set($name, $value) {}
-    public function save() {}
-    public function update() {}
-    public function delete() {}
+    private array $data = [];
+
+    public function get($name) {
+        return $this->data[$name] ?? null;
+    }
+
+    public function set($name, $value) {
+        $this->data[$name] = $value;
+    }
+
+    public function save() {
+    }
+
+    public function update() {
+    }
+
+    public function delete() {
+    }
 }
+
 class ProductProcessor {
-    public function process() {}
+    public ProductData $productData;
+
+    public function __construct(ProductData $productData) {
+        $this->productData = $productData;
+    }
+
+    public function process() {
+    }
 }
+
+// Class for displaying product information
 class ProductOutput {
-    public function show() {}
-    public function print() {}
+    public ProductData $productData;
+
+    public function __construct(ProductData $productData) {
+        $this->productData = $productData;
+    }
+
+    public function print() {
+    }
 }
+
+$productData = new ProductData();
+$productProcessor = new ProductProcessor($productData);
+$productOutput = new ProductOutput($productData);
+
+$productProcessor->process();
+$productOutput->print();
